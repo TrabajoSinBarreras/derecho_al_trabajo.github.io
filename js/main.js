@@ -3,12 +3,18 @@ document.addEventListener('DOMContentLoaded', () => {
     // Smooth scrolling for navigation links
     const links = document.querySelectorAll('nav a');
     links.forEach(link => {
-        link.addEventListener('click', (e) => {
-            e.preventDefault();
-            const targetId = link.getAttribute('href');
-            const targetSection = document.querySelector(targetId);
-            targetSection.scrollIntoView({ behavior: 'smooth' });
-        });
+        const href = link.getAttribute('href');
+
+        // Solo hacer scroll si es un anchor interno
+        if (href.startsWith('#')) {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const targetSection = document.querySelector(href);
+                if (targetSection) {
+                    targetSection.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        }
     });
 
     // Form validation
@@ -43,9 +49,11 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     ];
 
-    testimonials.forEach(testimonial => {
-        const p = document.createElement('p');
-        p.innerHTML = `<strong>${testimonial.name}:</strong> ${testimonial.message}`;
-        testimonialsSection.appendChild(p);
-    });
+    if (testimonialsSection) {
+        testimonials.forEach(testimonial => {
+            const p = document.createElement('p');
+            p.innerHTML = `<strong>${testimonial.name}:</strong> ${testimonial.message}`;
+            testimonialsSection.appendChild(p);
+        });
+    }
 });

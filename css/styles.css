@@ -1,20 +1,26 @@
+/* ====== ESTILO GENERAL ====== */
 body {
     font-family: 'Arial', sans-serif;
-    background-color: #f4f4f4;
+    background-color: #EFEBE0;
     color: #333;
     margin: 0;
     padding: 0;
 }
 
 header {
-    background-color: #007BFF;
+    background: linear-gradient(rgba(202, 178, 148, 0.4), rgba(202, 178, 148, 0.4)),
+                url('../assets/portada.jpg') no-repeat center center;
+    background-size: cover;
     color: #fff;
-    padding: 20px 10px;
+    padding: 60px 20px;
     text-align: center;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
+
+
 header h1 {
+    color: #EFEBE0;
     font-size: 2.5em;
     margin: 0;
 }
@@ -23,8 +29,9 @@ header p {
     font-size: 1.2em;
 }
 
+/* ====== NAVEGACIÓN ====== */
 nav {
-    background-color: #0056b3;
+    background-color: #A2A19C;
     color: #fff;
     padding: 10px;
     text-align: center;
@@ -43,10 +50,13 @@ nav a {
 }
 
 nav a:hover {
-    color: #FFD700;
+    color: #CAB294;
 }
 
+
+/* ====== SECCIONES ====== */
 section {
+    
     padding: 20px;
     max-width: 1000px;
     margin: auto;
@@ -57,11 +67,115 @@ section {
 }
 
 h2 {
-    color: #0056b3;
+    color: #A2A19C;
     font-size: 1.8em;
     margin-bottom: 10px;
 }
 
+/* ====== INTRO ====== */
+.intro-discapacidad {
+    background: linear-gradient(90deg, #EFEBE0 0%, #CAB294 100%);
+    padding: 2rem 1rem;
+    margin: 1.5rem 0;
+    border-radius: 18px;
+    box-shadow: 0 4px 18px rgba(44, 62, 80, 0.08);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: fadeIn 1.2s;
+}
+
+
+.intro-contenido {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.intro-icono {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: #fff;
+    box-shadow: 0 2px 8px rgba(44, 62, 80, 0.10);
+    object-fit: contain;
+}
+
+.intro-contenido h2 {
+    color: #333;
+    margin-bottom: 0.5rem;
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.intro-contenido p {
+    color: #333;
+    font-size: 1.15rem;
+    line-height: 1.7;
+    margin: 0;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(30px);}
+    to { opacity: 1; transform: translateY(0);}
+}
+
+/* ====== ÍNDICE ====== */
+.indice {
+    background: #f4f8fb;
+    border-radius: 12px;
+    margin: 2rem auto;
+    padding: 1rem 0.5rem;
+    box-shadow: 0 2px 10px rgba(44, 62, 80, 0.07);
+    max-width: 1100px;
+}
+
+.indice h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 0.7rem;
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
+.indice ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.2rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.indice li {
+    margin: 0;
+}
+
+.indice a {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: #e0eafc;
+    color: #333;
+    text-decoration: none;
+    padding: 0.6rem 1.2rem;
+    border-radius: 8px;
+    font-weight: 500;
+    transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+    box-shadow: 0 1px 4px rgba(44, 62, 80, 0.05);
+    font-size: 1rem;
+}
+
+.indice a:hover {
+    background: #2d5c8a;
+    color: #fff;
+    box-shadow: 0 2px 8px rgba(44, 62, 80, 0.12);
+}
+
+/* ====== RECUADRO ====== */
 .recuadro {
     background: #e3f2fd;
     padding: 15px;
@@ -70,12 +184,26 @@ h2 {
     border-radius: 5px;
 }
 
+/* ====== ICONOS ====== */
 .icono {
-    width: 30px;
-    vertical-align: middle;
+    width: 32px;
+    height: 32px;
+    object-fit: cover;
+    border-radius: 50%; /* Opcional: los hace redondos */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Suave sombra */
     margin-right: 10px;
+    vertical-align: middle;
 }
 
+/* Contenedor para ordenar bien los íconos con texto */
+.icono-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    gap: 10px; /* Espacio entre ícono y texto */
+}
+
+/* ====== FORMULARIO ====== */
 .formulario {
     background: #fff;
     border: 1px solid #ccc;
@@ -107,6 +235,46 @@ h2 {
     background: #0056b3;
 }
 
+/* ====== BOTONES ====== */
+.button {
+    display: inline-block;
+    background-color: #007BFF;
+    color: #fff;
+    padding: 10px 18px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 10px;
+    transition: background-color 0.3s;
+}
+
+.button,
+.formulario button {
+    background-color: #A2A19C;
+    color: #fff;
+}
+
+.button:hover,
+.formulario button:hover {
+    background-color: #CAB294;
+}
+
+
+.button:hover {
+    background-color: #0056b3;
+}
+
+/* ====== MAPA ====== */
+iframe {
+    width: 100%;
+    height: 450px;
+    border: 0;
+    border-radius: 8px;
+    margin-top: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+/* ====== REDES SOCIALES ====== */
 .social {
     text-align: center;
     margin-top: 20px;
@@ -123,115 +291,80 @@ h2 {
     color: #FFD700;
 }
 
+/* ====== PIE DE PÁGINA ====== */
 footer {
-    background-color: #007BFF;
+    background-color: #CAB294;
     color: #fff;
     text-align: center;
-    padding: 10px;
-    position: relative;
-    bottom: 0;
-    width: 100%;
+    padding: 20px 10px;
 }
 
+.social-footer {
+    margin-top: 10px;
+}
+
+.social-footer a {
+    color: #EFEBE0;
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: color 0.3s;
+}
+
+.social-footer a:hover {
+    color: #A2A19C;
+}
+
+.icono-footer {
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+    margin-right: 8px;
+}
+
+
+
+/* ENLACES DE RECURSOS PARA LA BUSQUEDA DE EMPLEO */
+.recursos-empleo {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 20px;
+}
+
+.recursos-empleo a {
+    display: block;
+    background-color: #CAB294;
+    color: #fff;
+    padding: 15px 25px;
+    border-radius: 12px;
+    text-decoration: none;
+    font-weight: bold;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: background 0.3s, transform 0.2s;
+    text-align: center;
+    min-width: 200px;
+}
+
+.recursos-empleo a:hover {
+    background-color: #A2A19C;
+    transform: translateY(-3px);
+}
+
+
+/* ====== RESPONSIVE ====== */
 @media (max-width: 600px) {
     nav {
         flex-direction: column;
     }
-}
 
-/* ...existing code... */
-.intro-discapacidad {
-    background: linear-gradient(90deg, #e0eafc 0%, #cfdef3 100%);
-    padding: 2rem 1rem;
-    margin: 1.5rem 0;
-    border-radius: 18px;
-    box-shadow: 0 4px 18px rgba(44, 62, 80, 0.08);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    animation: fadeIn 1.2s;
-}
-.intro-contenido {
-    display: flex;
-    align-items: center;
-    gap: 1.5rem;
-    max-width: 900px;
-    margin: 0 auto;
-}
-.intro-icono {
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-    background: #fff;
-    box-shadow: 0 2px 8px rgba(44, 62, 80, 0.10);
-    object-fit: contain;
-}
-.intro-contenido h2 {
-    color: #2d5c8a;
-    margin-bottom: 0.5rem;
-    font-size: 2rem;
-    font-weight: 700;
-}
-.intro-contenido p {
-    color: #333;
-    font-size: 1.15rem;
-    line-height: 1.7;
-    margin: 0;
-}
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(30px);}
-    to { opacity: 1; transform: translateY(0);}
-}
-/* ...existing code... */
+    .intro-contenido {
+        flex-direction: column;
+        text-align: center;
+    }
 
-.indice {
-    background: #f4f8fb;
-    border-radius: 12px;
-    margin: 2rem auto 2rem auto;
-    padding: 1rem 0.5rem;
-    box-shadow: 0 2px 10px rgba(44, 62, 80, 0.07);
-    max-width: 1100px;
-}
-
-.indice h2 {
-    text-align: center;
-    color: #2d5c8a;
-    margin-bottom: 0.7rem;
-    font-size: 1.3rem;
-    font-weight: 600;
-}
-
-.indice ul {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 1.2rem;
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.indice li {
-    margin: 0;
-}
-
-.indice a {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    background: #e0eafc;
-    color: #2d5c8a;
-    text-decoration: none;
-    padding: 0.6rem 1.2rem;
-    border-radius: 8px;
-    font-weight: 500;
-    transition: background 0.2s, color 0.2s, box-shadow 0.2s;
-    box-shadow: 0 1px 4px rgba(44, 62, 80, 0.05);
-    font-size: 1rem;
-}
-
-.indice a:hover {
-    background: #2d5c8a;
-    color: #fff;
-    box-shadow: 0 2px 8px rgba(44, 62, 80, 0.12);
+    .intro-icono {
+        margin-bottom: 1rem;
+    }
 }
