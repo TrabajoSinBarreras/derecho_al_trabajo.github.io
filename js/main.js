@@ -56,4 +56,20 @@ document.addEventListener('DOMContentLoaded', () => {
             testimonialsSection.appendChild(p);
         });
     }
+
+    // Botón leer más / leer menos
+    window.toggleTexto = function () {
+        const extra = document.querySelector('.contenido-extra');
+        const btn = document.querySelector('.btn-expandir');
+
+        if (extra.style.display === 'none' || extra.style.display === '') {
+            extra.style.display = 'block';
+            btn.textContent = 'Leer menos';
+        } else {
+            extra.style.display = 'none';
+            btn.textContent = 'Seguir leyendo';
+        }
+    };
+
+
 });
